@@ -8,8 +8,16 @@ return {
   },
   config = function()
     vim.keymap.set('n', '<leader>t', function()
+      if vim.bo.filetype == 'neo-tree' then
+        vim.cmd.wincmd 'p'
+      else
+        vim.cmd.Neotree 'focus'
+      end
+    end, { desc = 'Toggle Neo[T]ree Focus' })
+
+    vim.keymap.set('n', '<leader>z', function()
       vim.cmd.Neotree 'toggle'
-    end, { desc = 'Toggle Neo[T]ree' })
+    end, { desc = 'Toggle NeoTree' })
 
     require('neo-tree').setup {
       window = {
