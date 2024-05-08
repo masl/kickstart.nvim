@@ -16,7 +16,7 @@ return {
     end, { desc = 'Toggle Neo[T]ree Focus' })
 
     vim.keymap.set('n', '<leader>z', function()
-      vim.cmd.Neotree 'toggle'
+      vim.cmd.Neotree('toggle', 'reveal')
     end, { desc = 'Toggle NeoTree' })
 
     require('neo-tree').setup {
